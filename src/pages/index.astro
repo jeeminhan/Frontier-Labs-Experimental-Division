@@ -1,0 +1,242 @@
+---
+import '../styles/global.css'
+---
+
+<html class="light" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Frontier Labs | Prototype Feed</title>
+		<meta name="generator" content={Astro.generator} />
+		<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+	</head>
+	<body class="bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 min-h-screen">
+		<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+
+			<!-- Top Navigation -->
+			<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 border-b-4 border-black backdrop-blur-sm">
+				<div class="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
+					<div class="flex items-center gap-8">
+						<div class="flex items-center gap-2 group cursor-pointer">
+							<div class="bg-primary p-1 brutalist-border">
+								<span class="material-symbols-outlined text-white text-2xl">terminal</span>
+							</div>
+							<div><h1 class="text-2xl font-[400] tracking-tighter uppercase italic leading-none">Frontier Labs</h1><p class="text-[9px] font-black uppercase tracking-[0.15em] text-stone-400 ml-[2px]">Experimental Division</p></div>
+						</div>
+						<nav class="hidden md:flex items-center gap-6">
+							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest underline decoration-2 underline-offset-4 decoration-primary" href="/">Prototype Feed</a>
+							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/lab-notes">Lab Notes</a>
+						</nav>
+					</div>
+					<div class="flex items-center gap-4">
+						<a href="/connect" class="bg-primary text-white font-black px-6 py-2 brutalist-border shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all uppercase tracking-tighter no-underline">
+							Connect
+						</a>
+					</div>
+				</div>
+			</header>
+
+			<main class="flex-1 max-w-[1440px] mx-auto w-full">
+
+				<!-- Main Content Area -->
+				<section class="p-6 md:p-10">
+					<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+						<div>
+							<h2 class="text-6xl md:text-8xl font-[400] tracking-tighter uppercase leading-none mb-4">
+								Prototype <span class="text-primary italic">Feed</span>
+							</h2>
+							<p class="text-lg font-medium text-stone-600 dark:text-stone-400 max-w-xl">
+								Cultural engagement tools, digital-first frameworks, and active research modules from the Frontier edge.
+							</p>
+						</div>
+						</div>
+
+					<!-- Tabs -->
+					<div id="filter-tabs" class="flex border-b-4 border-black mb-8 overflow-x-auto">
+						<button data-filter="all" class="px-6 py-3 bg-black text-white font-black uppercase tracking-widest text-sm border-r-4 border-black">All_Builds</button>
+						<button data-filter="in-dev" class="px-6 py-3 font-black uppercase tracking-widest text-sm border-r-4 border-black hover:bg-stone-200 dark:hover:bg-stone-800">In_Dev</button>
+						<button data-filter="testing" class="px-6 py-3 font-black uppercase tracking-widest text-sm border-r-4 border-black hover:bg-stone-200 dark:hover:bg-stone-800">Testing</button>
+						<button data-filter="document" class="px-6 py-3 font-black uppercase tracking-widest text-sm border-r-4 border-black hover:bg-stone-200 dark:hover:bg-stone-800">Document</button>
+						<button data-filter="deprecated" class="px-6 py-3 font-black uppercase tracking-widest text-sm hover:bg-stone-200 dark:hover:bg-stone-800">Deprecated</button>
+					</div>
+
+					<!-- List of Prototypes -->
+					<div class="flex flex-col gap-4">
+
+						<!-- Item 1: Common Lore -->
+						<a href="/common-lore" data-status="in-dev" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all cursor-pointer no-underline text-inherit">
+							<div class="flex gap-6 items-center">
+								<div class="size-16 brutalist-border overflow-hidden shrink-0">
+									<img src="/common-lore-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Common Lore Cards" />
+								</div>
+								<div>
+									<div class="flex items-center gap-3 mb-1">
+										<span class="text-xs font-black text-stone-400">#001</span>
+										<h3 class="text-xl font-[900] uppercase tracking-tighter transition-colors group-hover:text-primary">Common_Lore</h3>
+										<span class="bg-orange-100 text-orange-700 px-2 py-0.5 text-[10px] font-black border border-orange-700 uppercase">In-Dev</span>
+									</div>
+									<p class="text-sm font-medium text-stone-500">ISM conversational card game — Scripture & Opportunity engagement deck.</p>
+									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
+								</div>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="size-3 bg-orange-500 rounded-full animate-pulse"></div>
+								<span class="text-[10px] font-black uppercase tracking-widest">Active_Stream</span>
+							</div>
+						</a>
+
+						<!-- Item 2: Global Atlas -->
+						<a href="/global-atlas" data-status="in-dev" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ff00ff] transition-all cursor-pointer no-underline text-inherit">
+							<div class="flex gap-6 items-center">
+								<div class="size-16 brutalist-border overflow-hidden shrink-0">
+									<img src="/global-atlas-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Global Atlas Map" />
+								</div>
+								<div>
+									<div class="flex items-center gap-3 mb-1">
+										<span class="text-xs font-black text-stone-400">#042</span>
+										<h3 class="text-xl font-[900] uppercase tracking-tighter group-hover:text-accent-magenta transition-colors">Global_Atlas</h3>
+										<span class="bg-orange-100 text-orange-700 px-2 py-0.5 text-[10px] font-black border border-orange-700 uppercase">In-Dev</span>
+									</div>
+									<p class="text-sm font-medium text-stone-500">Interactive global map — cross-cultural storytelling and geographic missions data.</p>
+									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
+								</div>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="size-3 bg-orange-500 rounded-full animate-pulse"></div>
+								<span class="text-[10px] font-black uppercase tracking-widest">Active_Stream</span>
+							</div>
+						</a>
+
+						<!-- Item 3: Google Drive Document -->
+						<a href="/ism-primer" data-status="document" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#00f0ff] transition-all cursor-pointer no-underline text-inherit">
+							<div class="flex gap-6 items-center">
+								<div class="size-16 brutalist-border overflow-hidden shrink-0">
+									<img src="/ISM-Primer-icon.png" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="ISM Primer Document" />
+								</div>
+								<div>
+									<div class="flex items-center gap-3 mb-1">
+										<span class="text-xs font-black text-stone-400">#019</span>
+										<h3 class="text-xl font-[900] uppercase tracking-tighter group-hover:text-primary transition-colors">ISM_Primer</h3>
+										<span class="bg-blue-100 text-blue-700 px-2 py-0.5 text-[10px] font-black border border-blue-700 uppercase">Document</span>
+									</div>
+									<p class="text-sm font-medium text-stone-500">Next Gen Mobilization Guide — Issue 2, February 2025.</p>
+									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: PDF | Commentable on Drive</p>
+								</div>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="size-3 bg-blue-500 rounded-full"></div>
+								<span class="text-[10px] font-black uppercase tracking-widest">View_Doc</span>
+							</div>
+						</a>
+
+						<!-- Item 4 -->
+						<div data-status="testing" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all cursor-pointer">
+							<div class="flex gap-6 items-center">
+								<div class="size-16 bg-black brutalist-border flex items-center justify-center shrink-0 overflow-hidden">
+									<span class="material-symbols-outlined text-white text-3xl">casino</span>
+								</div>
+								<div>
+									<div class="flex items-center gap-3 mb-1">
+										<span class="text-xs font-black text-stone-400">#088</span>
+										<h3 class="text-xl font-[900] uppercase tracking-tighter transition-colors group-hover:text-primary">Shock-o-poly</h3>
+										<span class="bg-green-100 text-green-700 px-2 py-0.5 text-[10px] font-black border border-green-700 uppercase">Testing</span>
+									</div>
+									<p class="text-sm font-medium text-stone-500">Monopoly variant for ISM storytelling & feedback testing workshops.</p>
+									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: Physical Artifact | Prototype</p>
+								</div>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="size-3 bg-orange-500 rounded-full animate-pulse"></div>
+								<span class="text-[10px] font-black uppercase tracking-widest">Play_Testing</span>
+							</div>
+						</div>
+
+					<!-- Mission Section -->
+					<div class="mt-24 pt-12 border-t-4 border-black">
+						<div class="flex flex-col md:flex-row gap-12">
+							<div class="flex-1">
+								<p class="text-[10px] font-black uppercase tracking-[0.2em] text-stone-400 mb-4">Core_Directives</p>
+								<h3 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-8">
+									Fail Fast, <span class="bg-primary text-white px-2 italic">Build Faster</span>
+								</h3>
+								<div class="space-y-6 text-lg font-medium text-stone-600 dark:text-stone-400">
+									<p>
+										Frontier Labs builds prototypes like airplanes — we take off before we're "ready," learn from every crash landing, and iterate until something flies. Every card game, board game, and digital tool is a <span class="text-stone-900 dark:text-stone-100 font-bold">rapid experiment</span> in ministry engagement.
+									</p>
+									<p>
+										We move students from guests of hospitality to global missional partners — one prototype at a time.
+									</p>
+								</div>
+							</div>
+							<div class="w-full md:w-80 bg-white dark:bg-stone-800 brutalist-border p-6 shadow-[8px_8px_0px_0px_#ff006e]">
+								<span class="material-symbols-outlined text-accent-magenta text-4xl mb-4">lightbulb</span>
+								<p class="text-sm font-black uppercase tracking-widest mb-2 italic">Build the Plane in the Air.</p>
+								<p class="text-xs font-medium text-stone-500 leading-relaxed text-left">
+									If it's worth doing, it's worth doing badly first. We play-test engagement cards at dinner tables, track what sparks conversation, and rebuild what falls flat — because transformation happens in real human connection.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</main>
+
+			<!-- Footer -->
+			<footer class="bg-black text-white py-12 px-6 border-t-4 border-accent-blue">
+				<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+					<div class="max-w-xs">
+						<h2 class="text-2xl font-[900] tracking-tighter uppercase italic mb-1">Frontier Labs</h2><p class="text-[9px] font-black uppercase tracking-[0.15em] text-stone-500 ml-[2px] mb-4">Experimental Division</p>
+						<p class="text-stone-400 text-sm font-medium">Innovating the mobilization journey for International Student Ministry through cultural engagement tools and digital-first frameworks.</p>
+					</div>
+					<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+						<div class="flex flex-col gap-3">
+							<p class="text-xs font-black uppercase text-primary tracking-widest">Social</p>
+							<del class="text-sm font-bold text-stone-500">GitHub</del>
+							<del class="text-sm font-bold text-stone-500">Twitter</del>
+							<del class="text-sm font-bold text-stone-500">Discord</del>
+						</div>
+						<div class="flex flex-col gap-3">
+							<p class="text-xs font-black uppercase text-primary tracking-widest">Legal</p>
+							<a class="text-sm font-bold hover:text-stone-300 transition-colors" href="#">Privacy</a>
+							<a class="text-sm font-bold hover:text-stone-300 transition-colors" href="#">Terms</a>
+							<a class="text-sm font-bold hover:text-stone-300 transition-colors" href="#">License</a>
+						</div>
+						<div class="flex flex-col gap-3">
+							<p class="text-xs font-black uppercase text-primary tracking-widest">Terminal</p>
+							<p class="text-[10px] font-mono text-stone-500">System: Stable</p>
+							<p class="text-[10px] font-mono text-stone-500">Nodes: 128 Active</p>
+						</div>
+					</div>
+				</div>
+				<div class="max-w-[1440px] mx-auto mt-12 pt-8 border-t border-stone-800 text-center md:text-left">
+					<p class="text-[10px] font-black uppercase tracking-widest text-stone-600">&copy; 2025 Frontier Labs Experimental Division. All rights reserved.</p>
+				</div>
+			</footer>
+
+		</div>
+	<script>
+		const tabs = document.querySelectorAll('#filter-tabs button');
+		const cards = document.querySelectorAll('[data-status]');
+
+		tabs.forEach(tab => {
+			tab.addEventListener('click', () => {
+				const filter = tab.getAttribute('data-filter');
+
+				tabs.forEach(t => {
+					t.classList.remove('bg-black', 'text-white');
+				});
+				tab.classList.add('bg-black', 'text-white');
+
+				cards.forEach(card => {
+					if (filter === 'all' || card.getAttribute('data-status') === filter) {
+						card.style.display = '';
+					} else {
+						card.style.display = 'none';
+					}
+				});
+			});
+		});
+	</script>
+	</body>
+</html>

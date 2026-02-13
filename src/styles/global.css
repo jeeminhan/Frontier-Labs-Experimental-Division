@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #4361ee;
+  --color-accent-magenta: #ff00ff;
+  --color-accent-blue: #ec5b13;
+  --color-background-light: #f8f6f6;
+  --color-background-dark: #221610;
+  --font-display: "Public Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+.brutalist-border {
+  border: 2px solid #000;
+}
+
+.accent-gradient-magenta {
+  background: linear-gradient(135deg, #ff00ff 0%, #800080 100%);
+}
+
+.accent-gradient-blue {
+  background: linear-gradient(135deg, #ec5b13 0%, #c1440a 100%);
+}

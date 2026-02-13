@@ -1,0 +1,195 @@
+---
+import '../styles/global.css'
+---
+
+<html class="light" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Frontier Labs | Lab Notes: Our Mission</title>
+		<meta name="generator" content={Astro.generator} />
+		<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+	</head>
+	<body class="bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 min-h-screen">
+		<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+
+			<!-- Top Navigation -->
+			<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 border-b-4 border-black backdrop-blur-sm">
+				<div class="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
+					<div class="flex items-center gap-8">
+						<a href="/" class="flex items-center gap-2 group cursor-pointer no-underline text-inherit">
+							<div class="bg-primary p-1 brutalist-border">
+								<span class="material-symbols-outlined text-white text-2xl">terminal</span>
+							</div>
+							<div><h1 class="text-2xl font-[400] tracking-tighter uppercase italic leading-none">Frontier Labs</h1><p class="text-[9px] font-black uppercase tracking-[0.15em] text-stone-400 ml-[2px]">Experimental Division</p></div>
+						</a>
+						<nav class="hidden md:flex items-center gap-6">
+							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/">Prototype Feed</a>
+							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest underline decoration-2 underline-offset-4 decoration-accent-magenta" href="/lab-notes">Lab Notes</a>
+						</nav>
+					</div>
+					<div class="flex items-center gap-4">
+						<a href="/connect" class="bg-primary text-white font-black px-6 py-2 brutalist-border shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all uppercase tracking-tighter no-underline">
+							Connect
+						</a>
+						<a href="/" class="flex items-center gap-2 font-black uppercase tracking-widest text-sm hover:text-primary transition-colors no-underline text-inherit">
+							<span class="material-symbols-outlined">arrow_back</span>
+							Back to Feed
+						</a>
+					</div>
+				</div>
+			</header>
+
+			<main class="flex-1 max-w-[1440px] mx-auto w-full p-6 md:p-10">
+				
+				<!-- Hero Section -->
+				<section class="mb-20">
+					<div class="flex flex-col gap-6">
+						<div class="flex items-center gap-3">
+							<span class="bg-accent-magenta text-white px-3 py-1 text-xs font-black brutalist-border uppercase tracking-widest">Manifesto_v1.0</span>
+							<span class="text-xs font-black text-stone-400 uppercase tracking-widest">Entry #000</span>
+						</div>
+						<h2 class="text-6xl md:text-9xl font-[400] tracking-tighter uppercase leading-[0.9] mb-4">
+							Fail Fast, <span class="text-primary italic">Build Faster</span>
+						</h2>
+						<p class="text-2xl md:text-3xl font-medium text-stone-600 dark:text-stone-400 max-w-3xl leading-tight">
+							Frontier Labs is our innovation runway for International Student Ministry. We build prototypes like we're building airplanes — fast, scrappy, and always learning from the crash landings.
+						</p>
+					</div>
+				</section>
+
+				<div class="grid grid-cols-1 md:grid-cols-12 gap-10 border-t-4 border-black pt-12">
+					<!-- Left Column: Core Values -->
+					<div class="md:col-span-8 flex flex-col gap-12">
+						<div class="group">
+							<h3 class="text-3xl font-black uppercase tracking-tighter mb-4 flex items-center gap-3">
+								<span class="size-8 bg-primary brutalist-border flex items-center justify-center text-white text-sm italic">01</span>
+								Build the Plane in the Air
+							</h3>
+							<p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
+								We don't wait for perfect conditions. We prototype fast, test with real people, and iterate on what sticks. A card game about Scripture? Ship it. A board game about global missions? Build it this weekend. The runway is short, so we take off before we're "ready."
+							</p>
+							<div class="bg-stone-100 dark:bg-stone-900/50 p-6 brutalist-border border-dashed">
+								<p class="text-[10px] font-mono text-stone-500 uppercase mb-2">// Prototype_Cycle: 2-Week Sprints</p>
+								<p class="text-sm italic text-stone-500">"If it's worth doing, it's worth doing badly first." — Frontier Ethos</p>
+							</div>
+						</div>
+
+						<div class="group">
+							<h3 class="text-3xl font-black uppercase tracking-tighter mb-4 flex items-center gap-3">
+								<span class="size-8 bg-accent-magenta brutalist-border flex items-center justify-center text-white text-sm italic">02</span>
+								Learn From the Wreckage
+							</h3>
+							<p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
+								Every failed prototype teaches us something a strategy doc never could. We play-test engagement cards at dinner tables. We watch students react to Shock-o-poly in real time. We track what sparks conversation and what falls flat — then we rebuild.
+							</p>
+							<div class="bg-stone-100 dark:bg-stone-900/50 p-6 brutalist-border border-dashed">
+								<p class="text-[10px] font-mono text-stone-500 uppercase mb-2">// Failure_Log: Indexed & Celebrated</p>
+								<p class="text-sm italic text-stone-500">"We don't have post-mortems. We have post-flights." — Frontier Ethos</p>
+							</div>
+						</div>
+
+						<div class="group">
+							<h3 class="text-3xl font-black uppercase tracking-tighter mb-4 flex items-center gap-3">
+								<span class="size-8 bg-accent-blue brutalist-border flex items-center justify-center text-white text-sm italic">03</span>
+								Make It Real, Make It Felt
+							</h3>
+							<p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
+								Ministry isn't a PDF. It's a conversation over a card game. It's a student pointing at a map and saying "that's my country." We build tangible, touchable, playable tools that create genuine human connection — because that's where transformation happens.
+							</p>
+							<div class="bg-stone-100 dark:bg-stone-900/50 p-6 brutalist-border border-dashed">
+								<p class="text-[10px] font-mono text-stone-500 uppercase mb-2">// Engagement_Priority: Physical → Digital → Hybrid</p>
+								<p class="text-sm italic text-stone-500">"From guests to global partners — one prototype at a time." — Frontier Ethos</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column: Sidebar Stats -->
+					<div class="md:col-span-4 flex flex-col gap-6">
+						<div class="bg-black text-white p-8 brutalist-border shadow-[8px_8px_0px_0px_rgba(67,97,238,1)]">
+							<h4 class="text-xl font-black uppercase italic mb-6 text-primary">Lab Stats</h4>
+							<div class="flex flex-col gap-4">
+								<div class="border-b border-stone-800 pb-2">
+									<p class="text-[10px] uppercase text-stone-500 font-black">Active Prototypes</p>
+									<p class="text-2xl font-black">4</p>
+								</div>
+								<div class="border-b border-stone-800 pb-2">
+									<p class="text-[10px] uppercase text-stone-500 font-black">Sprint Cycle</p>
+									<p class="text-2xl font-black">Feb <span class="text-xs font-normal text-stone-500">(2-Week Cadence)</span></p>
+								</div>
+								<div class="border-b border-stone-800 pb-2">
+									<p class="text-[10px] uppercase text-stone-500 font-black">Crash Landings</p>
+									<p class="text-2xl font-black">∞ <span class="text-xs font-normal text-stone-500">(and counting)</span></p>
+								</div>
+								<div class="border-b border-stone-800 pb-2">
+									<p class="text-[10px] uppercase text-stone-500 font-black">Play-Tests Run</p>
+									<p class="text-2xl font-black">12+</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="brutalist-border p-6 bg-white dark:bg-stone-800">
+							<div class="flex items-center gap-2 mb-4">
+								<div class="size-3 bg-green-500 rounded-full animate-pulse"></div>
+								<span class="text-[10px] font-black uppercase tracking-widest">Current_Sprint</span>
+							</div>
+							<p class="text-xs font-bold leading-tight">February Sprint: Branding Guide v0.1, ISM Primer Issue 2, Shock-o-poly play-testing, and Digital Strategy rollout.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Visual Break -->
+				<section class="mt-20 py-20 border-y-4 border-black bg-accent-blue/10 flex flex-col items-center justify-center text-center overflow-hidden relative">
+					<div class="absolute inset-0 opacity-10 pointer-events-none">
+						<div class="grid grid-cols-12 h-full w-full">
+							{Array.from({ length: 48 }).map(() => (
+								<div class="border border-black aspect-square"></div>
+							))}
+						</div>
+					</div>
+					<h3 class="text-4xl md:text-6xl font-[900] uppercase tracking-tighter mb-8 max-w-4xl relative z-10">
+						We build <span class="bg-black text-white px-4 py-1 italic">airplanes mid-flight</span> for the Kingdom.
+					</h3>
+					<a href="/connect" class="bg-primary text-white font-black px-10 py-5 brutalist-border shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all uppercase tracking-tighter text-xl relative z-10 no-underline">
+						Join the Research
+					</a>
+				</section>
+
+			</main>
+
+			<!-- Footer -->
+			<footer class="bg-black text-white py-12 px-6 border-t-4 border-accent-blue mt-20">
+				<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+					<div class="max-w-xs">
+						<h2 class="text-2xl font-[900] tracking-tighter uppercase italic mb-1">Frontier Labs</h2><p class="text-[9px] font-black uppercase tracking-[0.15em] text-stone-500 ml-[2px] mb-4">Experimental Division</p>
+						<p class="text-stone-400 text-sm font-medium">Innovating the mobilization journey for International Student Ministry through cultural engagement tools and digital-first frameworks.</p>
+					</div>
+					<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+						<div class="flex flex-col gap-3">
+							<p class="text-xs font-black uppercase text-primary tracking-widest">Social</p>
+							<del class="text-sm font-bold text-stone-500">GitHub</del>
+							<del class="text-sm font-bold text-stone-500">Twitter</del>
+							<del class="text-sm font-bold text-stone-500">Discord</del>
+						</div>
+						<div class="flex flex-col gap-3">
+							<p class="text-xs font-black uppercase text-primary tracking-widest">Legal</p>
+							<a class="text-sm font-bold hover:text-stone-300 transition-colors" href="#">Privacy</a>
+							<a class="text-sm font-bold hover:text-stone-300 transition-colors" href="#">Terms</a>
+							<a class="text-sm font-bold hover:text-stone-300 transition-colors" href="#">License</a>
+						</div>
+						<div class="flex flex-col gap-3">
+							<p class="text-xs font-black uppercase text-primary tracking-widest">Terminal</p>
+							<p class="text-[10px] font-mono text-stone-500">System: Stable</p>
+							<p class="text-[10px] font-mono text-stone-500">Nodes: 128 Active</p>
+						</div>
+					</div>
+				</div>
+				<div class="max-w-[1440px] mx-auto mt-12 pt-8 border-t border-stone-800 text-center md:text-left">
+					<p class="text-[10px] font-black uppercase tracking-widest text-stone-600">&copy; 2025 Frontier Labs Experimental Division. All rights reserved.</p>
+				</div>
+			</footer>
+
+		</div>
+	</body>
+</html>
