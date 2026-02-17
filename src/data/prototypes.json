@@ -1,0 +1,30 @@
+{
+  "common-lore": {
+    "name": "Common_Lore",
+    "prototypeUrl": "https://common-lore.vercel.app/",
+    "feedbackUrl": "",
+    "slidesUrl": "",
+    "videoUrl": ""
+  },
+  "global-atlas": {
+    "name": "Global_Atlas",
+    "prototypeUrl": "https://global-atlas-plum.vercel.app/",
+    "feedbackUrl": "",
+    "slidesUrl": "",
+    "videoUrl": ""
+  },
+  "ism-primer": {
+    "name": "ISM_Primer",
+    "prototypeUrl": "https://drive.google.com/file/d/1YiejwCYoDW0gCGtTWStUvHtFMqSnCNXF/view?usp=sharing",
+    "feedbackUrl": "",
+    "slidesUrl": "",
+    "videoUrl": ""
+  },
+  "shock-o-poly": {
+    "name": "Shock-o-poly",
+    "prototypeUrl": "",
+    "feedbackUrl": "",
+    "slidesUrl": "",
+    "videoUrl": ""
+  }
+}

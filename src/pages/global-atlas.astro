@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import prototypes from '../data/prototypes.json'
+const links = prototypes['global-atlas']
 ---
 
 <html class="light" lang="en">
@@ -53,7 +55,7 @@ import '../styles/global.css'
 						</p>
 					</div>
 					<a
-						href="https://global-atlas-plum.vercel.app/"
+						href={links.prototypeUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="bg-accent-magenta text-white font-black px-8 py-4 brutalist-border shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all uppercase tracking-tighter text-lg no-underline flex items-center gap-2 shrink-0"
@@ -75,13 +77,14 @@ import '../styles/global.css'
 								<div class="size-3 rounded-full bg-green-500 border border-green-700"></div>
 							</div>
 							<div class="hidden sm:flex items-center gap-2 bg-stone-800 brutalist-border px-3 py-1 ml-2">
-								<span class="material-symbols-outlined text-stone-500 text-sm">lock</span>
-								<span class="text-[11px] font-mono text-stone-400 truncate max-w-xs">global-atlas-plum.vercel.app</span>
+								<span class="material-symbols-outlined text-stone-500 text-sm" id="url-icon">lock</span>
+								<span class="text-[11px] font-mono text-stone-400 truncate max-w-xs" id="url-text">global-atlas-plum.vercel.app</span>
 							</div>
 						</div>
 						<div class="flex items-center gap-2">
 							<a
-								href="https://global-atlas-plum.vercel.app/"
+								id="external-link"
+								href={links.prototypeUrl}
 								target="_blank"
 								rel="noopener noreferrer"
 								class="text-stone-500 hover:text-white transition-colors no-underline"
@@ -91,9 +94,29 @@ import '../styles/global.css'
 							</a>
 						</div>
 					</div>
+					<!-- Monitor Tabs -->
+					<div class="flex bg-stone-950 border-b-2 border-black overflow-x-auto no-scrollbar">
+						<button data-tab="prototype" data-src={links.prototypeUrl} data-url="global-atlas-plum.vercel.app" data-icon="lock" class="monitor-tab flex items-center gap-1 px-2 sm:px-4 py-2 text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest text-white bg-stone-800 border-r border-stone-700 shrink-0 transition-colors">
+							<span class="material-symbols-outlined text-sm hidden sm:inline">web</span>
+							Prototype
+						</button>
+						<button data-tab="feedback" data-src={links.feedbackUrl || '#'} data-url="feedback-form" data-icon="rate_review" class="monitor-tab flex items-center gap-1 px-2 sm:px-4 py-2 text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest text-stone-500 hover:text-stone-300 border-r border-stone-700 shrink-0 transition-colors">
+							<span class="material-symbols-outlined text-sm hidden sm:inline">rate_review</span>
+							Feedback
+						</button>
+						<button data-tab="slides" data-src={links.slidesUrl || '#'} data-url="slides" data-icon="slideshow" class="monitor-tab flex items-center gap-1 px-2 sm:px-4 py-2 text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest text-stone-500 hover:text-stone-300 border-r border-stone-700 shrink-0 transition-colors">
+							<span class="material-symbols-outlined text-sm hidden sm:inline">slideshow</span>
+							Slides
+						</button>
+						<button data-tab="video" data-src={links.videoUrl || '#'} data-url="video" data-icon="play_circle" class="monitor-tab flex items-center gap-1 px-2 sm:px-4 py-2 text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest text-stone-500 hover:text-stone-300 shrink-0 transition-colors">
+							<span class="material-symbols-outlined text-sm hidden sm:inline">play_circle</span>
+							Video
+						</button>
+					</div>
 					<!-- iframe Content -->
 					<iframe
-						src="https://global-atlas-plum.vercel.app/"
+						id="monitor-frame"
+						src={links.prototypeUrl}
 						width="100%"
 						style="height: 80vh; min-height: 500px;"
 						class="border-0 block bg-white"
@@ -108,7 +131,7 @@ import '../styles/global.css'
 						Back to Feed
 					</a>
 					<a
-						href="https://global-atlas-plum.vercel.app/"
+						href={links.prototypeUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="flex items-center gap-2 font-black uppercase tracking-widest text-sm text-accent-magenta hover:underline no-underline"
@@ -153,5 +176,31 @@ import '../styles/global.css'
 			</footer>
 
 		</div>
+	<script>
+		const tabs = document.querySelectorAll('.monitor-tab');
+		const frame = document.getElementById('monitor-frame');
+		const urlText = document.getElementById('url-text');
+		const urlIcon = document.getElementById('url-icon');
+		const extLink = document.getElementById('external-link');
+
+		tabs.forEach(tab => {
+			tab.addEventListener('click', () => {
+				tabs.forEach(t => {
+					t.classList.remove('bg-stone-800', 'text-white');
+					t.classList.add('text-stone-500');
+				});
+				tab.classList.add('bg-stone-800', 'text-white');
+				tab.classList.remove('text-stone-500');
+
+				const src = tab.getAttribute('data-src');
+				if (src && src !== '#') {
+					frame.src = src;
+					extLink.href = src;
+				}
+				urlText.textContent = tab.getAttribute('data-url');
+				urlIcon.textContent = tab.getAttribute('data-icon');
+			});
+		});
+	</script>
 	</body>
 </html>

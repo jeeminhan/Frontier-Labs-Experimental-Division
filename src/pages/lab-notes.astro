@@ -29,13 +29,14 @@ import '../styles/global.css'
 							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest underline decoration-2 underline-offset-4 decoration-accent-magenta" href="/lab-notes">Lab Notes</a>
 						</nav>
 					</div>
-					<div class="flex items-center gap-4">
-						<a href="/connect" class="bg-primary text-white font-black px-6 py-2 brutalist-border shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all uppercase tracking-tighter no-underline">
+					<div class="flex items-center gap-2 md:gap-4">
+						<a href="/connect" class="bg-primary text-white font-black px-4 md:px-6 py-2 brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all uppercase tracking-tighter no-underline text-xs md:text-base">
 							Connect
 						</a>
-						<a href="/" class="flex items-center gap-2 font-black uppercase tracking-widest text-sm hover:text-primary transition-colors no-underline text-inherit">
+						<a href="/" class="flex items-center gap-2 font-black uppercase tracking-widest text-xs md:text-sm hover:text-primary transition-colors no-underline text-inherit">
 							<span class="material-symbols-outlined">arrow_back</span>
-							Back to Feed
+							<span class="hidden md:inline">Back to Feed</span>
+							<span class="md:hidden">Feed</span>
 						</a>
 					</div>
 				</div>

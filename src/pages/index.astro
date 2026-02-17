@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import prototypes from '../data/prototypes.json'
 ---
 
 <html class="light" lang="en">
@@ -16,21 +17,24 @@ import '../styles/global.css'
 
 			<!-- Top Navigation -->
 			<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 border-b-4 border-black backdrop-blur-sm">
-				<div class="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
-					<div class="flex items-center gap-8">
+				<div class="max-w-[1440px] mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+					<div class="flex items-center gap-4 md:gap-8">
 						<div class="flex items-center gap-2 group cursor-pointer">
 							<div class="bg-primary p-1 brutalist-border">
-								<span class="material-symbols-outlined text-white text-2xl">terminal</span>
+								<span class="material-symbols-outlined text-white text-xl md:text-2xl">terminal</span>
 							</div>
-							<div><h1 class="text-2xl font-[400] tracking-tighter uppercase italic leading-none">Frontier Labs</h1><p class="text-[9px] font-black uppercase tracking-[0.15em] text-stone-400 ml-[2px]">Experimental Division</p></div>
+							<div><h1 class="text-lg md:text-2xl font-[400] tracking-tighter uppercase italic leading-none">Frontier Labs</h1><p class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.15em] text-stone-400 ml-[2px]">Experimental Division</p></div>
 						</div>
 						<nav class="hidden md:flex items-center gap-6">
 							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest underline decoration-2 underline-offset-4 decoration-primary" href="/">Prototype Feed</a>
 							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/lab-notes">Lab Notes</a>
 						</nav>
 					</div>
-					<div class="flex items-center gap-4">
-						<a href="/connect" class="bg-primary text-white font-black px-6 py-2 brutalist-border shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all uppercase tracking-tighter no-underline">
+					<div class="flex items-center gap-2 md:gap-4">
+						<a href="/lab-notes" class="md:hidden text-xs font-black uppercase tracking-widest hover:text-primary underline decoration-2 underline-offset-4 decoration-accent-magenta">
+							Lab Notes
+						</a>
+						<a href="/connect" class="bg-primary text-white font-black px-4 md:px-6 py-2 brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all uppercase tracking-tighter no-underline text-xs md:text-base">
 							Connect
 						</a>
 					</div>
@@ -53,93 +57,132 @@ import '../styles/global.css'
 						</div>
 
 					<!-- Alpha Testing Snippet -->
-					<div class="mb-8 p-4 bg-stone-100 dark:bg-stone-900 border-l-4 border-accent-magenta">
+					<div class="hidden md:block mb-8 p-4 bg-stone-100 dark:bg-stone-900 border-l-4 border-accent-magenta">
 						<p class="text-xs font-bold text-stone-600 dark:text-stone-400">
-							<span class="uppercase tracking-widest text-accent-magenta mr-2">Alpha_Testing:</span>
+							<span class="block md:inline uppercase tracking-widest text-accent-magenta mb-1 md:mb-0 mr-2">Alpha_Testing:</span>
 							First eyes to see it before it goes out into the world for beta_testing.
 						</p>
-					</div>
-
-					<!-- Tabs -->
-					<div id="filter-tabs" class="flex border-b-4 border-black mb-8 overflow-x-auto">
-						<button data-filter="all" class="px-6 py-3 bg-black text-white font-black uppercase tracking-widest text-sm border-r-4 border-black">All_Builds</button>
-						<button data-filter="in-dev" class="px-6 py-3 font-black uppercase tracking-widest text-sm border-r-4 border-black hover:bg-stone-200 dark:hover:bg-stone-800">In_Dev</button>
-						<button data-filter="alpha" class="px-6 py-3 font-black uppercase tracking-widest text-sm border-r-4 border-black hover:bg-stone-200 dark:hover:bg-stone-800">Alpha_Testing</button>
-						<button data-filter="beta" class="px-6 py-3 font-black uppercase tracking-widest text-sm border-r-4 border-black hover:bg-stone-200 dark:hover:bg-stone-800">Beta_Testing</button>
-						<button data-filter="deprecated" class="px-6 py-3 font-black uppercase tracking-widest text-sm hover:bg-stone-200 dark:hover:bg-stone-800">Deprecated</button>
 					</div>
 
 					<!-- List of Prototypes -->
 					<div class="flex flex-col gap-4">
 
 						<!-- Item 1: Common Lore -->
-						<a href="/common-lore" data-status="alpha" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all cursor-pointer no-underline text-inherit">
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all">
 							<div class="flex gap-6 items-center">
-								<div class="size-16 brutalist-border overflow-hidden shrink-0">
+								<a href="/common-lore" class="size-16 brutalist-border overflow-hidden shrink-0 block">
 									<img src="/common-lore-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Common Lore Cards" />
-								</div>
+								</a>
 								<div>
 									<div class="flex items-center gap-3 mb-1">
 										<span class="text-xs font-black text-stone-400">#001</span>
-										<h3 class="text-xl font-[900] uppercase tracking-tighter transition-colors group-hover:text-primary">Common_Lore</h3>
-										<span class="bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
+										<a href="/common-lore" class="text-xl font-[900] uppercase tracking-tighter transition-colors hover:text-primary no-underline text-inherit">Common_Lore</a>
+										<span class="hidden md:inline bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
 									</div>
 									<p class="text-sm font-medium text-stone-500">ISM conversational card game — Scripture & Opportunity engagement deck.</p>
-									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
+									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-2">
-								<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
-								<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+							<div class="flex items-center gap-4">
+								<div class="flex items-center gap-2">
+									<a href={prototypes['common-lore'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">rate_review</span>
+										Feedback
+									</a>
+									<a href={prototypes['common-lore'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">slideshow</span>
+										Slides
+									</a>
+									<a href={prototypes['common-lore'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">play_circle</span>
+										Video
+									</a>
+								</div>
+								<div class="hidden md:flex items-center gap-2">
+									<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
+									<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+								</div>
 							</div>
-						</a>
+						</div>
 
 						<!-- Item 2: Global Atlas -->
-						<a href="/global-atlas" data-status="alpha" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ff00ff] transition-all cursor-pointer no-underline text-inherit">
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ff00ff] transition-all">
 							<div class="flex gap-6 items-center">
-								<div class="size-16 brutalist-border overflow-hidden shrink-0">
+								<a href="/global-atlas" class="size-16 brutalist-border overflow-hidden shrink-0 block">
 									<img src="/global-atlas-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Global Atlas Map" />
-								</div>
+								</a>
 								<div>
 									<div class="flex items-center gap-3 mb-1">
 										<span class="text-xs font-black text-stone-400">#042</span>
-										<h3 class="text-xl font-[900] uppercase tracking-tighter group-hover:text-accent-magenta transition-colors">Global_Atlas</h3>
-										<span class="bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
+										<a href="/global-atlas" class="text-xl font-[900] uppercase tracking-tighter hover:text-accent-magenta transition-colors no-underline text-inherit">Global_Atlas</a>
+										<span class="hidden md:inline bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Interactive global map — cross-cultural storytelling and geographic missions data.</p>
-									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
+									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-2">
-								<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
-								<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+							<div class="flex items-center gap-4">
+								<div class="flex items-center gap-2">
+									<a href={prototypes['global-atlas'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">rate_review</span>
+										Feedback
+									</a>
+									<a href={prototypes['global-atlas'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">slideshow</span>
+										Slides
+									</a>
+									<a href={prototypes['global-atlas'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">play_circle</span>
+										Video
+									</a>
+								</div>
+								<div class="hidden md:flex items-center gap-2">
+									<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
+									<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+								</div>
 							</div>
-						</a>
+						</div>
 
-						<!-- Item 3: Google Drive Document -->
-						<a href="/ism-primer" data-status="alpha" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#00f0ff] transition-all cursor-pointer no-underline text-inherit">
+						<!-- Item 3: ISM Primer -->
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#00f0ff] transition-all">
 							<div class="flex gap-6 items-center">
-								<div class="size-16 brutalist-border overflow-hidden shrink-0">
+								<a href="/ism-primer" class="size-16 brutalist-border overflow-hidden shrink-0 block">
 									<img src="/ISM-Primer-icon.png" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="ISM Primer Document" />
-								</div>
+								</a>
 								<div>
 									<div class="flex items-center gap-3 mb-1">
 										<span class="text-xs font-black text-stone-400">#019</span>
-										<h3 class="text-xl font-[900] uppercase tracking-tighter group-hover:text-primary transition-colors">ISM_Primer</h3>
-										<span class="bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
+										<a href="/ism-primer" class="text-xl font-[900] uppercase tracking-tighter hover:text-primary transition-colors no-underline text-inherit">ISM_Primer</a>
+										<span class="hidden md:inline bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Next Gen Mobilization Guide — Issue 2, February 2025.</p>
-									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: PDF | Commentable on Drive</p>
+									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: PDF | Commentable on Drive</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-2">
-								<div class="size-3 bg-purple-500 rounded-full"></div>
-								<span class="text-[10px] font-black uppercase tracking-widest">View_Doc</span>
+							<div class="flex items-center gap-4">
+								<div class="flex items-center gap-2">
+									<a href={prototypes['ism-primer'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">rate_review</span>
+										Feedback
+									</a>
+									<a href={prototypes['ism-primer'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">slideshow</span>
+										Slides
+									</a>
+									<a href={prototypes['ism-primer'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">play_circle</span>
+										Video
+									</a>
+								</div>
+								<div class="hidden md:flex items-center gap-2">
+									<div class="size-3 bg-purple-500 rounded-full"></div>
+									<span class="text-[10px] font-black uppercase tracking-widest">View_Doc</span>
+								</div>
 							</div>
-						</a>
+						</div>
 
-						<!-- Item 4 -->
-						<div data-status="in-dev" class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all cursor-pointer">
+						<!-- Item 4: Shock-o-poly -->
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all">
 							<div class="flex gap-6 items-center">
 								<div class="size-16 bg-black brutalist-border flex items-center justify-center shrink-0 overflow-hidden">
 									<span class="material-symbols-outlined text-white text-3xl">casino</span>
@@ -148,15 +191,31 @@ import '../styles/global.css'
 									<div class="flex items-center gap-3 mb-1">
 										<span class="text-xs font-black text-stone-400">#088</span>
 										<h3 class="text-xl font-[900] uppercase tracking-tighter transition-colors group-hover:text-primary">Shock-o-poly</h3>
-										<span class="bg-orange-100 text-orange-700 px-2 py-0.5 text-[10px] font-black border border-orange-700 uppercase">In-Dev</span>
+										<span class="hidden md:inline bg-orange-100 text-orange-700 px-2 py-0.5 text-[10px] font-black border border-orange-700 uppercase">In-Dev</span>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Monopoly variant for ISM storytelling & feedback testing workshops.</p>
-									<p class="text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: Physical Artifact | Prototype</p>
+									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: Physical Artifact | Prototype</p>
 								</div>
 							</div>
-							<div class="flex items-center gap-2">
-								<div class="size-3 bg-orange-500 rounded-full animate-pulse"></div>
-								<span class="text-[10px] font-black uppercase tracking-widest">Active_Build</span>
+							<div class="flex items-center gap-4">
+								<div class="flex items-center gap-2">
+									<a href={prototypes['shock-o-poly'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">rate_review</span>
+										Feedback
+									</a>
+									<a href={prototypes['shock-o-poly'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">slideshow</span>
+										Slides
+									</a>
+									<a href={prototypes['shock-o-poly'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">play_circle</span>
+										Video
+									</a>
+								</div>
+								<div class="hidden md:flex items-center gap-2">
+									<div class="size-3 bg-orange-500 rounded-full animate-pulse"></div>
+									<span class="text-[10px] font-black uppercase tracking-widest">Active_Build</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -225,28 +284,5 @@ import '../styles/global.css'
 			</footer>
 
 		</div>
-	<script>
-		const tabs = document.querySelectorAll('#filter-tabs button');
-		const cards = document.querySelectorAll('[data-status]');
-
-		tabs.forEach(tab => {
-			tab.addEventListener('click', () => {
-				const filter = tab.getAttribute('data-filter');
-
-				tabs.forEach(t => {
-					t.classList.remove('bg-black', 'text-white');
-				});
-				tab.classList.add('bg-black', 'text-white');
-
-				cards.forEach(card => {
-					if (filter === 'all' || card.getAttribute('data-status') === filter) {
-						card.style.display = '';
-					} else {
-						card.style.display = 'none';
-					}
-				});
-			});
-		});
-	</script>
 	</body>
 </html>
