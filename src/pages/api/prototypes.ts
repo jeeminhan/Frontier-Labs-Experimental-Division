@@ -1,17 +1,36 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { put, head, list } from '@vercel/blob';
 
-const dataPath = join(process.cwd(), 'src/data/prototypes.json');
+const BLOB_NAME = 'prototypes.json';
 
-function readData() {
-  return JSON.parse(readFileSync(dataPath, 'utf-8'));
+// Fallback data matching src/data/prototypes.json
+import defaultData from '../../data/prototypes.json';
+
+async function readData() {
+  try {
+    // Check if blob exists
+    const { blobs } = await list({ prefix: BLOB_NAME });
+    if (blobs.length > 0) {
+      const res = await fetch(blobs[0].url);
+      return await res.json();
+    }
+  } catch {
+    // Blob store not available (local dev) — fall through to default
+  }
+  return structuredClone(defaultData);
+}
+
+async function writeData(data: Record<string, unknown>) {
+  await put(BLOB_NAME, JSON.stringify(data, null, 2), {
+    access: 'public',
+    addRandomSuffix: false,
+  });
 }
 
 export const GET: APIRoute = async () => {
-  const data = readData();
+  const data = await readData();
   return new Response(JSON.stringify(data), {
     headers: { 'Content-Type': 'application/json' }
   });
@@ -19,7 +38,7 @@ export const GET: APIRoute = async () => {
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
-  const current = readData();
+  const current = await readData();
 
   for (const [key, values] of Object.entries(body)) {
     if (current[key]) {
@@ -31,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
   }
 
-  writeFileSync(dataPath, JSON.stringify(current, null, 2) + '\n');
+  await writeData(current);
   return new Response(JSON.stringify({ ok: true }), {
     headers: { 'Content-Type': 'application/json' }
   });

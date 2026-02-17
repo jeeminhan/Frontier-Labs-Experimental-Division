@@ -1,7 +1,19 @@
 ---
 export const prerender = false;
 import '../styles/global.css'
-import prototypes from '../data/prototypes.json'
+import defaultData from '../data/prototypes.json'
+import { list } from '@vercel/blob'
+
+let prototypes = defaultData as Record<string, any>;
+try {
+  const { blobs } = await list({ prefix: 'prototypes.json' });
+  if (blobs.length > 0) {
+    const res = await fetch(blobs[0].url);
+    prototypes = await res.json();
+  }
+} catch {
+  // Blob store not available (local dev) — use default JSON
+}
 ---
 
 <html class="light" lang="en">
