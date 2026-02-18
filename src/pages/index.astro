@@ -1,6 +1,19 @@
 ---
+export const prerender = false;
 import '../styles/global.css'
-import prototypes from '../data/prototypes.json'
+import defaultPrototypes from '../data/prototypes.json'
+import { list } from '@vercel/blob'
+
+let prototypes = defaultPrototypes as Record<string, any>;
+try {
+  const { blobs } = await list({ prefix: 'prototypes.json' });
+  if (blobs.length > 0) {
+    const res = await fetch(blobs[0].url);
+    prototypes = await res.json();
+  }
+} catch {
+  // Blob store not available (local dev) — use default JSON
+}
 ---
 
 <html class="light" lang="en">
@@ -81,7 +94,7 @@ import prototypes from '../data/prototypes.json'
 										<span class="hidden lg:inline text-[9px] font-black uppercase tracking-[0.2em] text-cyan-500">★ Key_Resource</span>
 										<div class="flex items-center gap-2">
 											<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
-											<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+											<span class="text-[10px] font-black uppercase tracking-widest">Alpha</span>
 										</div>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Next Gen Mobilization Guide — Issue 2, February 2025.</p>
@@ -118,7 +131,7 @@ import prototypes from '../data/prototypes.json'
 										<a href="/common-lore" class="text-xl font-[900] uppercase tracking-tighter transition-colors hover:text-primary no-underline text-inherit">Common_Lore</a>
 										<div class="flex items-center gap-2">
 											<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
-											<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+											<span class="text-[10px] font-black uppercase tracking-widest">Alpha</span>
 										</div>
 									</div>
 									<p class="text-sm font-medium text-stone-500">ISM conversational card game — Scripture & Opportunity engagement deck.</p>
@@ -155,7 +168,7 @@ import prototypes from '../data/prototypes.json'
 										<a href="/global-atlas" class="text-xl font-[900] uppercase tracking-tighter hover:text-accent-magenta transition-colors no-underline text-inherit">Global_Atlas</a>
 										<div class="flex items-center gap-2">
 											<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
-											<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+											<span class="text-[10px] font-black uppercase tracking-widest">Alpha</span>
 										</div>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Interactive global map — cross-cultural storytelling and geographic missions data.</p>
@@ -181,7 +194,7 @@ import prototypes from '../data/prototypes.json'
 						</div>
 
 						<!-- Item 4: Shock-o-poly -->
-						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all">
+						<div class="group bg-stone-100 dark:bg-stone-900 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 opacity-60 grayscale cursor-not-allowed">
 							<div class="flex gap-6 items-center">
 								<div class="size-16 bg-black brutalist-border flex items-center justify-center shrink-0 overflow-hidden">
 									<span class="material-symbols-outlined text-white text-3xl">casino</span>
@@ -189,8 +202,11 @@ import prototypes from '../data/prototypes.json'
 								<div>
 									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
 										<span class="text-xs font-black text-stone-400">#088</span>
-										<h3 class="text-xl font-[900] uppercase tracking-tighter transition-colors group-hover:text-primary">Shock-o-poly</h3>
-										<span class="hidden md:inline bg-orange-100 text-orange-700 px-2 py-0.5 text-[10px] font-black border border-orange-700 uppercase">In-Dev</span>
+										<h3 class="text-xl font-[900] uppercase tracking-tighter">Shock-o-poly</h3>
+										<div class="flex items-center gap-2">
+											<div class="size-3 bg-orange-500 rounded-full animate-pulse"></div>
+											<span class="text-[10px] font-black uppercase tracking-widest">_dev</span>
+										</div>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Monopoly variant for ISM storytelling & feedback testing workshops.</p>
 									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: Physical Artifact | Prototype</p>
@@ -198,22 +214,18 @@ import prototypes from '../data/prototypes.json'
 							</div>
 							<div class="flex items-center gap-4">
 								<div class="flex flex-wrap gap-2">
-									<a href={prototypes['shock-o-poly'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									<button disabled class="inline-flex items-center gap-1 px-3 py-1.5 bg-stone-300 text-stone-500 text-[10px] font-black uppercase tracking-widest brutalist-border cursor-not-allowed">
 										<span class="material-symbols-outlined text-sm">rate_review</span>
 										Feedback
-									</a>
-									<a href={prototypes['shock-o-poly'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									</button>
+									<button disabled class="inline-flex items-center gap-1 px-3 py-1.5 bg-stone-300 text-stone-500 text-[10px] font-black uppercase tracking-widest brutalist-border cursor-not-allowed">
 										<span class="material-symbols-outlined text-sm">slideshow</span>
 										Slides
-									</a>
-									<a href={prototypes['shock-o-poly'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									</button>
+									<button disabled class="inline-flex items-center gap-1 px-3 py-1.5 bg-stone-300 text-stone-500 text-[10px] font-black uppercase tracking-widest brutalist-border cursor-not-allowed">
 										<span class="material-symbols-outlined text-sm">play_circle</span>
 										Video
-									</a>
-								</div>
-								<div class="hidden md:flex items-center gap-2">
-									<div class="size-3 bg-orange-500 rounded-full animate-pulse"></div>
-									<span class="text-[10px] font-black uppercase tracking-widest">Active_Build</span>
+									</button>
 								</div>
 							</div>
 						</div>

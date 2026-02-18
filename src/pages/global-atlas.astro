@@ -1,6 +1,17 @@
 ---
+export const prerender = false;
 import '../styles/global.css'
-import prototypes from '../data/prototypes.json'
+import defaultPrototypes from '../data/prototypes.json'
+import { list } from '@vercel/blob'
+
+let prototypes = defaultPrototypes as Record<string, any>;
+try {
+  const { blobs } = await list({ prefix: 'prototypes.json' });
+  if (blobs.length > 0) {
+    const res = await fetch(blobs[0].url);
+    prototypes = await res.json();
+  }
+} catch {}
 const links = prototypes['global-atlas']
 ---
 
