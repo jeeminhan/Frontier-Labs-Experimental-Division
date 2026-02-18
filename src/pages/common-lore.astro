@@ -18,19 +18,23 @@ const links = prototypes['common-lore']
 
 			<!-- Top Navigation -->
 			<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 border-b-4 border-black backdrop-blur-sm">
-				<div class="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
-					<div class="flex items-center gap-8">
+				<div class="max-w-[1440px] mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+					<div class="flex items-center gap-4 md:gap-8">
 						<a href="/" class="flex items-center gap-2 group cursor-pointer no-underline text-inherit">
 							<div class="bg-primary p-1 brutalist-border">
-								<span class="material-symbols-outlined text-white text-2xl">terminal</span>
+								<span class="material-symbols-outlined text-white text-xl md:text-2xl">terminal</span>
 							</div>
-							<div><h1 class="text-2xl font-[900] tracking-tighter uppercase italic leading-none">Frontier Labs</h1><p class="text-[9px] font-black uppercase tracking-[0.15em] text-stone-400 ml-[2px]">Experimental Division</p></div>
+							<div><h1 class="text-lg md:text-2xl font-[400] tracking-tighter uppercase italic leading-none">Frontier Labs</h1><p class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.15em] text-stone-400 ml-[2px]">Experimental Division</p></div>
 						</a>
 					</div>
-					<a href="/" class="flex items-center gap-2 font-black uppercase tracking-widest text-sm hover:text-primary transition-colors no-underline text-inherit">
-						<span class="material-symbols-outlined">arrow_back</span>
-						Back to Feed
-					</a>
+					<div class="flex items-center gap-2 md:gap-4">
+						<a href="/" class="md:hidden text-xs font-black uppercase tracking-widest hover:text-primary no-underline text-inherit">
+							Feed
+						</a>
+						<a href="/connect" class="bg-primary text-white font-black px-4 md:px-6 py-2 brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all uppercase tracking-tighter no-underline text-xs md:text-base">
+							Connect
+						</a>
+					</div>
 				</div>
 			</header>
 
@@ -127,7 +131,6 @@ const links = prototypes['common-lore']
 				<!-- Bottom Nav -->
 				<div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
 					<a href="/" class="flex items-center gap-2 font-black uppercase tracking-widest text-sm hover:text-primary transition-colors no-underline text-inherit">
-						<span class="material-symbols-outlined">arrow_back</span>
 						Back to Feed
 					</a>
 					<a

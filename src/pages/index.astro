@@ -19,12 +19,12 @@ import prototypes from '../data/prototypes.json'
 			<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 border-b-4 border-black backdrop-blur-sm">
 				<div class="max-w-[1440px] mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
 					<div class="flex items-center gap-4 md:gap-8">
-						<div class="flex items-center gap-2 group cursor-pointer">
+						<a href="/" class="flex items-center gap-2 group cursor-pointer no-underline text-inherit">
 							<div class="bg-primary p-1 brutalist-border">
 								<span class="material-symbols-outlined text-white text-xl md:text-2xl">terminal</span>
 							</div>
 							<div><h1 class="text-lg md:text-2xl font-[400] tracking-tighter uppercase italic leading-none">Frontier Labs</h1><p class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.15em] text-stone-400 ml-[2px]">Experimental Division</p></div>
-						</div>
+						</a>
 						<nav class="hidden md:flex items-center gap-6">
 							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest underline decoration-2 underline-offset-4 decoration-primary" href="/">Prototype Feed</a>
 							<a class="text-sm font-bold hover:text-primary transition-colors uppercase tracking-widest" href="/lab-notes">Lab Notes</a>
@@ -67,100 +67,29 @@ import prototypes from '../data/prototypes.json'
 					<!-- List of Prototypes -->
 					<div class="flex flex-col gap-4">
 
-						<!-- Item 1: Common Lore -->
-						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all">
-							<div class="flex gap-6 items-center">
-								<a href="/common-lore" class="size-16 brutalist-border overflow-hidden shrink-0 block">
-									<img src="/common-lore-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Common Lore Cards" />
-								</a>
-								<div>
-									<div class="flex items-center gap-3 mb-1">
-										<span class="text-xs font-black text-stone-400">#001</span>
-										<a href="/common-lore" class="text-xl font-[900] uppercase tracking-tighter transition-colors hover:text-primary no-underline text-inherit">Common_Lore</a>
-										<span class="hidden md:inline bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
-									</div>
-									<p class="text-sm font-medium text-stone-500">ISM conversational card game — Scripture & Opportunity engagement deck.</p>
-									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
-								</div>
-							</div>
-							<div class="flex items-center gap-4">
-								<div class="flex items-center gap-2">
-									<a href={prototypes['common-lore'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
-										<span class="material-symbols-outlined text-sm">rate_review</span>
-										Feedback
-									</a>
-									<a href={prototypes['common-lore'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
-										<span class="material-symbols-outlined text-sm">slideshow</span>
-										Slides
-									</a>
-									<a href={prototypes['common-lore'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
-										<span class="material-symbols-outlined text-sm">play_circle</span>
-										Video
-									</a>
-								</div>
-								<div class="hidden md:flex items-center gap-2">
-									<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
-									<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Item 2: Global Atlas -->
-						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ff00ff] transition-all">
-							<div class="flex gap-6 items-center">
-								<a href="/global-atlas" class="size-16 brutalist-border overflow-hidden shrink-0 block">
-									<img src="/global-atlas-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Global Atlas Map" />
-								</a>
-								<div>
-									<div class="flex items-center gap-3 mb-1">
-										<span class="text-xs font-black text-stone-400">#042</span>
-										<a href="/global-atlas" class="text-xl font-[900] uppercase tracking-tighter hover:text-accent-magenta transition-colors no-underline text-inherit">Global_Atlas</a>
-										<span class="hidden md:inline bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
-									</div>
-									<p class="text-sm font-medium text-stone-500">Interactive global map — cross-cultural storytelling and geographic missions data.</p>
-									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
-								</div>
-							</div>
-							<div class="flex items-center gap-4">
-								<div class="flex items-center gap-2">
-									<a href={prototypes['global-atlas'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
-										<span class="material-symbols-outlined text-sm">rate_review</span>
-										Feedback
-									</a>
-									<a href={prototypes['global-atlas'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
-										<span class="material-symbols-outlined text-sm">slideshow</span>
-										Slides
-									</a>
-									<a href={prototypes['global-atlas'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
-										<span class="material-symbols-outlined text-sm">play_circle</span>
-										Video
-									</a>
-								</div>
-								<div class="hidden md:flex items-center gap-2">
-									<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
-									<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Item 3: ISM Primer -->
-						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#00f0ff] transition-all">
+						<!-- Item 1 (Featured): ISM Primer -->
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#00f0ff] transition-all border-t-4 border-cyan-400">
+							<p class="text-[9px] font-black uppercase tracking-[0.2em] text-cyan-500 mb-3 w-full lg:hidden">★ Key_Resource</p>
 							<div class="flex gap-6 items-center">
 								<a href="/ism-primer" class="size-16 brutalist-border overflow-hidden shrink-0 block">
 									<img src="/ISM-Primer-icon.png" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="ISM Primer Document" />
 								</a>
 								<div>
-									<div class="flex items-center gap-3 mb-1">
+									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
 										<span class="text-xs font-black text-stone-400">#019</span>
 										<a href="/ism-primer" class="text-xl font-[900] uppercase tracking-tighter hover:text-primary transition-colors no-underline text-inherit">ISM_Primer</a>
-										<span class="hidden md:inline bg-purple-100 text-purple-700 px-2 py-0.5 text-[10px] font-black border border-purple-700 uppercase">Alpha_Test</span>
+										<span class="hidden lg:inline text-[9px] font-black uppercase tracking-[0.2em] text-cyan-500">★ Key_Resource</span>
+										<div class="flex items-center gap-2">
+											<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
+											<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+										</div>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Next Gen Mobilization Guide — Issue 2, February 2025.</p>
 									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Format: PDF | Commentable on Drive</p>
 								</div>
 							</div>
 							<div class="flex items-center gap-4">
-								<div class="flex items-center gap-2">
+								<div class="flex flex-wrap gap-2">
 									<a href={prototypes['ism-primer'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
 										<span class="material-symbols-outlined text-sm">rate_review</span>
 										Feedback
@@ -174,21 +103,91 @@ import prototypes from '../data/prototypes.json'
 										Video
 									</a>
 								</div>
-								<div class="hidden md:flex items-center gap-2">
-									<div class="size-3 bg-purple-500 rounded-full"></div>
-									<span class="text-[10px] font-black uppercase tracking-widest">View_Doc</span>
+							</div>
+						</div>
+
+						<!-- Item 2: Common Lore -->
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all">
+							<div class="flex gap-6 items-center">
+								<a href="/common-lore" class="size-16 brutalist-border overflow-hidden shrink-0 block">
+									<img src="/common-lore-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Common Lore Cards" />
+								</a>
+								<div>
+									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
+										<span class="text-xs font-black text-stone-400">#001</span>
+										<a href="/common-lore" class="text-xl font-[900] uppercase tracking-tighter transition-colors hover:text-primary no-underline text-inherit">Common_Lore</a>
+										<div class="flex items-center gap-2">
+											<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
+											<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+										</div>
+									</div>
+									<p class="text-sm font-medium text-stone-500">ISM conversational card game — Scripture & Opportunity engagement deck.</p>
+									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
+								</div>
+							</div>
+							<div class="flex items-center gap-4">
+								<div class="flex flex-wrap gap-2">
+									<a href={prototypes['common-lore'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">rate_review</span>
+										Feedback
+									</a>
+									<a href={prototypes['common-lore'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">slideshow</span>
+										Slides
+									</a>
+									<a href={prototypes['common-lore'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">play_circle</span>
+										Video
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Item 3: Global Atlas -->
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ff00ff] transition-all">
+							<div class="flex gap-6 items-center">
+								<a href="/global-atlas" class="size-16 brutalist-border overflow-hidden shrink-0 block">
+									<img src="/global-atlas-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Global Atlas Map" />
+								</a>
+								<div>
+									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
+										<span class="text-xs font-black text-stone-400">#042</span>
+										<a href="/global-atlas" class="text-xl font-[900] uppercase tracking-tighter hover:text-accent-magenta transition-colors no-underline text-inherit">Global_Atlas</a>
+										<div class="flex items-center gap-2">
+											<div class="size-3 bg-purple-500 rounded-full animate-pulse"></div>
+											<span class="text-[10px] font-black uppercase tracking-widest">Alpha_Stream</span>
+										</div>
+									</div>
+									<p class="text-sm font-medium text-stone-500">Interactive global map — cross-cultural storytelling and geographic missions data.</p>
+									<p class="hidden md:block text-[10px] font-black uppercase text-stone-400 mt-2 tracking-widest">Platform: Vercel | Live</p>
+								</div>
+							</div>
+							<div class="flex items-center gap-4">
+								<div class="flex flex-wrap gap-2">
+									<a href={prototypes['global-atlas'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">rate_review</span>
+										Feedback
+									</a>
+									<a href={prototypes['global-atlas'].slidesUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-magenta text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">slideshow</span>
+										Slides
+									</a>
+									<a href={prototypes['global-atlas'].videoUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+										<span class="material-symbols-outlined text-sm">play_circle</span>
+										Video
+									</a>
 								</div>
 							</div>
 						</div>
 
 						<!-- Item 4: Shock-o-poly -->
-						<div class="group bg-white dark:bg-stone-800 brutalist-border p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all">
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#ec5b13] transition-all">
 							<div class="flex gap-6 items-center">
 								<div class="size-16 bg-black brutalist-border flex items-center justify-center shrink-0 overflow-hidden">
 									<span class="material-symbols-outlined text-white text-3xl">casino</span>
 								</div>
 								<div>
-									<div class="flex items-center gap-3 mb-1">
+									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
 										<span class="text-xs font-black text-stone-400">#088</span>
 										<h3 class="text-xl font-[900] uppercase tracking-tighter transition-colors group-hover:text-primary">Shock-o-poly</h3>
 										<span class="hidden md:inline bg-orange-100 text-orange-700 px-2 py-0.5 text-[10px] font-black border border-orange-700 uppercase">In-Dev</span>
@@ -198,7 +197,7 @@ import prototypes from '../data/prototypes.json'
 								</div>
 							</div>
 							<div class="flex items-center gap-4">
-								<div class="flex items-center gap-2">
+								<div class="flex flex-wrap gap-2">
 									<a href={prototypes['shock-o-poly'].feedbackUrl || '#'} class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
 										<span class="material-symbols-outlined text-sm">rate_review</span>
 										Feedback
