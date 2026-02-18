@@ -215,6 +215,13 @@ const links = prototypes['common-lore']
 				urlIcon.textContent = tab.getAttribute('data-icon');
 			});
 		});
+
+		// Activate tab based on URL hash (e.g. /ism-primer#video)
+		const initialHash = window.location.hash.slice(1);
+		if (initialHash) {
+			const hashTab = document.querySelector(`[data-tab="${initialHash}"]`);
+			if (hashTab) hashTab.click();
+		}
 	</script>
 	</body>
 </html>
