@@ -4,8 +4,8 @@
 
 @theme {
   --color-primary: #4361ee;
-  --color-accent-magenta: #ff00ff;
-  --color-accent-blue: #ec5b13;
+  --color-accent-magenta: #aa1da1;
+  --color-accent-blue: #4057c4;
   --color-background-light: #f8f6f6;
   --color-background-dark: #221610;
   --font-display: "Public Sans", sans-serif;
@@ -21,11 +21,11 @@ body {
 }
 
 .accent-gradient-magenta {
-  background: linear-gradient(135deg, #ff00ff 0%, #800080 100%);
+  background: linear-gradient(135deg, #aa1da1 0%, #7a1474 100%);
 }
 
 .accent-gradient-blue {
-  background: linear-gradient(135deg, #ec5b13 0%, #c1440a 100%);
+  background: linear-gradient(135deg, #4057c4 0%, #2e3e9a 100%);
 }
 
 .no-scrollbar::-webkit-scrollbar {
