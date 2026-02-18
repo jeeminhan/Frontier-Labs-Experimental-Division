@@ -149,11 +149,12 @@ try {
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(payload)
 				});
-				if (!res.ok) throw new Error('Save failed');
+				const json = await res.json().catch(() => ({}));
+				if (!res.ok) throw new Error(json.error || `HTTP ${res.status}`);
 				banner.textContent = '✓ Links saved successfully';
 				banner.className = 'mb-6 p-4 brutalist-border font-black text-sm uppercase tracking-widest bg-green-100 text-green-700 border-green-700';
-			} catch {
-				banner.textContent = '✗ Error saving links';
+			} catch (err) {
+				banner.textContent = `✗ Error: ${err instanceof Error ? err.message : String(err)}`;
 				banner.className = 'mb-6 p-4 brutalist-border font-black text-sm uppercase tracking-widest bg-red-100 text-red-700 border-red-700';
 			}
 

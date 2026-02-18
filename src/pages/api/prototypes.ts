@@ -1,16 +1,14 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { put, head, list } from '@vercel/blob';
+import { put, list } from '@vercel/blob';
 
 const BLOB_NAME = 'prototypes.json';
 
-// Fallback data matching src/data/prototypes.json
 import defaultData from '../../data/prototypes.json';
 
 async function readData() {
   try {
-    // Check if blob exists
     const { blobs } = await list({ prefix: BLOB_NAME });
     if (blobs.length > 0) {
       const res = await fetch(blobs[0].url);
@@ -37,21 +35,29 @@ export const GET: APIRoute = async () => {
 };
 
 export const POST: APIRoute = async ({ request }) => {
-  const body = await request.json();
-  const current = await readData();
+  try {
+    const body = await request.json();
+    const current = await readData();
 
-  for (const [key, values] of Object.entries(body)) {
-    if (current[key]) {
-      const v = values as Record<string, string>;
-      if (v.prototypeUrl !== undefined) current[key].prototypeUrl = v.prototypeUrl;
-      if (v.feedbackUrl !== undefined) current[key].feedbackUrl = v.feedbackUrl;
-      if (v.slidesUrl !== undefined) current[key].slidesUrl = v.slidesUrl;
-      if (v.videoUrl !== undefined) current[key].videoUrl = v.videoUrl;
+    for (const [key, values] of Object.entries(body)) {
+      if (current[key]) {
+        const v = values as Record<string, string>;
+        if (v.prototypeUrl !== undefined) current[key].prototypeUrl = v.prototypeUrl;
+        if (v.feedbackUrl !== undefined) current[key].feedbackUrl = v.feedbackUrl;
+        if (v.slidesUrl !== undefined) current[key].slidesUrl = v.slidesUrl;
+        if (v.videoUrl !== undefined) current[key].videoUrl = v.videoUrl;
+      }
     }
-  }
 
-  await writeData(current);
-  return new Response(JSON.stringify({ ok: true }), {
-    headers: { 'Content-Type': 'application/json' }
-  });
+    await writeData(current);
+    return new Response(JSON.stringify({ ok: true }), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return new Response(JSON.stringify({ ok: false, error: message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 };
