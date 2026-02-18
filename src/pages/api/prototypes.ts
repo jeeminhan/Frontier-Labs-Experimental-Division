@@ -11,7 +11,7 @@ async function readData() {
   try {
     const { blobs } = await list({ prefix: BLOB_NAME });
     if (blobs.length > 0) {
-      const res = await fetch(blobs[0].url);
+      const res = await fetch(blobs[0].url, { cache: 'no-store' });
       return await res.json();
     }
   } catch {

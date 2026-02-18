@@ -8,7 +8,7 @@ let prototypes = defaultData as Record<string, any>;
 try {
   const { blobs } = await list({ prefix: 'prototypes.json' });
   if (blobs.length > 0) {
-    const res = await fetch(blobs[0].url);
+    const res = await fetch(blobs[0].url, { cache: 'no-store' });
     prototypes = await res.json();
   }
 } catch {
