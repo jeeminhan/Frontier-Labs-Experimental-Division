@@ -219,10 +219,12 @@ const previewUrl = links.prototypeUrl.replace('/view?usp=sharing', '/preview')
 				tab.classList.add('bg-stone-800', 'text-white');
 				tab.classList.remove('text-stone-500');
 
-				const src = tab.getAttribute('data-src');
+				const rawSrc = tab.getAttribute('data-src');
+				// Convert Google Drive sharing URLs to embeddable preview URLs
+				const src = rawSrc ? rawSrc.replace(/\/view(\?[^#]*)?$/, '/preview') : rawSrc;
 				if (src && src !== '#') {
 					frame.src = src;
-					extLink.href = src;
+					extLink.href = rawSrc || src;
 				}
 				urlText.textContent = tab.getAttribute('data-url');
 				urlIcon.textContent = tab.getAttribute('data-icon');
