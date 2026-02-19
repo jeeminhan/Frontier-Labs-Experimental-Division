@@ -421,10 +421,8 @@ try {
 			</div>
 		</div>
 
-		<script type="application/json" id="proto-data" set:text={JSON.stringify(prototypes)}></script>
-		<script is:inline>
-			var protoData = JSON.parse(document.getElementById("proto-data").textContent);
-			var PROTO_META = {
+		<script define:vars={{ protoData: prototypes }}>
+			const PROTO_META = {
 				"ism-primer": {
 					title: "ISM Primer", badge: "Document",
 					badgeClass: "bg-blue-100 text-blue-700 border-blue-700",
@@ -448,7 +446,7 @@ try {
 				}
 			};
 
-			function openProtoModal(key, tab) {
+			window.openProtoModal = function(key, tab) {
 				tab = tab || "prototype";
 				var links = protoData[key];
 				var meta = PROTO_META[key];
@@ -500,14 +498,14 @@ try {
 				document.body.style.overflow = "hidden";
 			}
 
-			function closeProtoModal() {
+			window.closeProtoModal = function() {
 				document.getElementById("proto-modal").classList.add("hidden");
 				document.getElementById("proto-frame").src = "about:blank";
 				document.body.style.overflow = "";
 			}
 
 			document.addEventListener("keydown", function(e) {
-				if (e.key === "Escape") closeProtoModal();
+				if (e.key === "Escape") window.closeProtoModal();
 			});
 		</script>
 	</body>
