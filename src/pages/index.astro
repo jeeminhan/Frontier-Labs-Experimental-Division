@@ -421,7 +421,8 @@ try {
 			</div>
 		</div>
 
-		<script is:inline define:vars={{ protoData: prototypes }}>
+		<script is:inline>
+			var protoData = {JSON.stringify(prototypes)};
 			var PROTO_META = {
 				"ism-primer": {
 					title: "ISM Primer", badge: "Document",
