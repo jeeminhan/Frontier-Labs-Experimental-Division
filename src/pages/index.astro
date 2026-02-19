@@ -93,12 +93,12 @@ try {
 						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#00f0ff] transition-all border-t-4 border-cyan-400">
 							<p class="text-[9px] font-black uppercase tracking-[0.2em] text-cyan-500 mb-3 w-full lg:hidden">★ Key_Resource</p>
 							<div class="flex gap-6 items-center">
-								<a href="/ism-primer" class="size-16 brutalist-border overflow-hidden shrink-0 block">
+								<button onclick="openProtoModal('ism-primer')" class="size-16 brutalist-border overflow-hidden shrink-0 block cursor-pointer">
 									<img src="/ISM-Primer-icon.png" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="ISM Primer Document" />
-								</a>
+								</button>
 								<div>
 									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
-										<a href="/ism-primer" class="text-xl font-[900] uppercase tracking-tighter hover:text-primary transition-colors no-underline text-inherit">ISM_Primer</a>
+										<button onclick="openProtoModal('ism-primer')" class="text-xl font-[900] uppercase tracking-tighter hover:text-primary transition-colors text-left">ISM_Primer</button>
 										<span class="hidden lg:inline text-[9px] font-black uppercase tracking-[0.2em] text-cyan-500">★ Key_Resource</span>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Next Gen Mobilization Guide — Issue 1, January 2026.</p>
@@ -106,14 +106,14 @@ try {
 							</div>
 							<div class="flex items-center gap-4">
 								<div class="flex flex-wrap gap-2">
-									<a href="/ism-primer#video" class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									<button onclick="openProtoModal('ism-primer','video')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
 										<span class="material-symbols-outlined text-sm">play_circle</span>
 										Video Overview
-									</a>
-									<a href="/ism-primer#feedback" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									</button>
+									<button onclick="openProtoModal('ism-primer','feedback')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
 										<span class="material-symbols-outlined text-sm">rate_review</span>
 										Feedback Form
-									</a>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -121,26 +121,26 @@ try {
 						<!-- Item 2: Common Lore -->
 						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#4057c4] transition-all">
 							<div class="flex gap-6 items-center">
-								<a href="/common-lore" class="size-16 brutalist-border overflow-hidden shrink-0 block">
+								<button onclick="openProtoModal('common-lore')" class="size-16 brutalist-border overflow-hidden shrink-0 block cursor-pointer">
 									<img src="/common-lore-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Common Lore Cards" />
-								</a>
+								</button>
 								<div>
 									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
-										<a href="/common-lore" class="text-xl font-[900] uppercase tracking-tighter transition-colors hover:text-primary no-underline text-inherit">Common_Lore</a>
+										<button onclick="openProtoModal('common-lore')" class="text-xl font-[900] uppercase tracking-tighter transition-colors hover:text-primary text-left">Common_Lore</button>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Icebreaker card game for cross-cultural friendships.</p>
 								</div>
 							</div>
 							<div class="flex items-center gap-4">
 								<div class="flex flex-wrap gap-2">
-									<a href="/common-lore#video" class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									<button onclick="openProtoModal('common-lore','video')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
 										<span class="material-symbols-outlined text-sm">play_circle</span>
 										Video Overview
-									</a>
-									<a href="/common-lore#feedback" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									</button>
+									<button onclick="openProtoModal('common-lore','feedback')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
 										<span class="material-symbols-outlined text-sm">rate_review</span>
 										Feedback Form
-									</a>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -148,26 +148,26 @@ try {
 						<!-- Item 3: Global Atlas -->
 						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#aa1da1] transition-all">
 							<div class="flex gap-6 items-center">
-								<a href="/global-atlas" class="size-16 brutalist-border overflow-hidden shrink-0 block">
+								<button onclick="openProtoModal('global-atlas')" class="size-16 brutalist-border overflow-hidden shrink-0 block cursor-pointer">
 									<img src="/global-atlas-icon.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Global Atlas Map" />
-								</a>
+								</button>
 								<div>
 									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
-										<a href="/global-atlas" class="text-xl font-[900] uppercase tracking-tighter hover:text-accent-magenta transition-colors no-underline text-inherit">Global_Atlas</a>
+										<button onclick="openProtoModal('global-atlas')" class="text-xl font-[900] uppercase tracking-tighter hover:text-accent-magenta transition-colors text-left">Global_Atlas</button>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Interactive scavenger hunt to help start conversations.</p>
 								</div>
 							</div>
 							<div class="flex items-center gap-4">
 								<div class="flex flex-wrap gap-2">
-									<a href="/global-atlas#video" class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									<button onclick="openProtoModal('global-atlas','video')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
 										<span class="material-symbols-outlined text-sm">play_circle</span>
 										Video Overview
-									</a>
-									<a href="/global-atlas#feedback" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all no-underline">
+									</button>
+									<button onclick="openProtoModal('global-atlas','feedback')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
 										<span class="material-symbols-outlined text-sm">rate_review</span>
 										Feedback Form
-									</a>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -375,6 +375,138 @@ try {
 				document.body.style.overflow = "";
 			}
 			document.addEventListener("keydown", e => { if (e.key === "Escape") closeConnectModal(); });
+		</script>
+
+		<!-- Prototype Modal -->
+		<div id="proto-modal" class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center hidden">
+			<div onclick="closeProtoModal()" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+			<div class="relative bg-background-light dark:bg-stone-900 w-full sm:max-w-5xl max-h-[95vh] flex flex-col brutalist-border sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+				<div class="flex items-center justify-between px-4 py-3 border-b-4 border-black shrink-0">
+					<div class="flex items-center gap-3 min-w-0">
+						<h2 id="proto-modal-name" class="text-xl font-[900] uppercase tracking-tighter truncate"></h2>
+						<span id="proto-modal-badge" class="px-2 py-0.5 text-[10px] font-black border uppercase shrink-0"></span>
+					</div>
+					<div class="flex items-center gap-2 shrink-0 ml-3">
+						<a id="proto-modal-ext" href="#" target="_blank" rel="noopener noreferrer"
+							class="hidden sm:inline-flex items-center gap-1 bg-primary text-white text-[10px] font-black px-3 py-1.5 brutalist-border uppercase tracking-tighter no-underline hover:opacity-90 transition-opacity">
+							<span class="material-symbols-outlined text-sm">open_in_new</span>
+							<span id="proto-modal-ext-text">Open Full Site</span>
+						</a>
+						<button onclick="closeProtoModal()" class="brutalist-border p-1 hover:bg-black hover:text-white transition-colors">
+							<span class="material-symbols-outlined">close</span>
+						</button>
+					</div>
+				</div>
+				<div class="bg-black flex flex-col flex-1 min-h-0 overflow-hidden">
+					<div class="bg-stone-900 border-b-2 border-black px-3 py-2 flex items-center justify-between shrink-0">
+						<div class="flex items-center gap-2">
+							<div class="flex items-center gap-1.5">
+								<div class="size-3 rounded-full bg-red-500 border border-red-700"></div>
+								<div class="size-3 rounded-full bg-yellow-500 border border-yellow-700"></div>
+								<div class="size-3 rounded-full bg-green-500 border border-green-700"></div>
+							</div>
+							<div class="hidden sm:flex items-center gap-2 bg-stone-800 brutalist-border px-3 py-1 ml-1">
+								<span id="proto-url-icon" class="material-symbols-outlined text-stone-500 text-sm">lock</span>
+								<span id="proto-url-text" class="text-[11px] font-mono text-stone-400 truncate max-w-[220px]"></span>
+							</div>
+						</div>
+						<a id="proto-ext-link" href="#" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition-colors no-underline">
+							<span class="material-symbols-outlined text-lg">open_in_new</span>
+						</a>
+					</div>
+					<div id="proto-tabs" class="flex bg-stone-950 border-b-2 border-black overflow-x-auto shrink-0"></div>
+					<iframe id="proto-frame" src="about:blank" width="100%"
+						class="border-0 block bg-white" style="height: 70vh; min-height: 400px;"></iframe>
+				</div>
+			</div>
+		</div>
+
+		<script is:inline define:vars={{ protoData: prototypes }}>
+			var PROTO_META = {
+				"ism-primer": {
+					title: "ISM Primer", badge: "Document",
+					badgeClass: "bg-blue-100 text-blue-700 border-blue-700",
+					displayUrl: "ISM Primer — JAN 2026", urlIcon: "description",
+					extText: "Open in Drive",
+					toPreview: function(url) { return url.replace(/\/view(\?[^#]*)?$/, "/preview"); }
+				},
+				"common-lore": {
+					title: "Common Lore", badge: "Stable",
+					badgeClass: "bg-green-100 text-green-700 border-green-700",
+					displayUrl: "common-lore.vercel.app", urlIcon: "lock",
+					extText: "Open Full Site",
+					toPreview: function(url) { return url; }
+				},
+				"global-atlas": {
+					title: "Global Atlas", badge: "In-Dev",
+					badgeClass: "bg-orange-100 text-orange-700 border-orange-700",
+					displayUrl: "global-atlas-plum.vercel.app", urlIcon: "lock",
+					extText: "Open Full Site",
+					toPreview: function(url) { return url; }
+				}
+			};
+
+			function openProtoModal(key, tab) {
+				tab = tab || "prototype";
+				var links = protoData[key];
+				var meta = PROTO_META[key];
+				if (!links || !meta) return;
+
+				document.getElementById("proto-modal-name").textContent = meta.title;
+				var badge = document.getElementById("proto-modal-badge");
+				badge.textContent = meta.badge;
+				badge.className = "px-2 py-0.5 text-[10px] font-black border uppercase " + meta.badgeClass;
+				document.getElementById("proto-url-icon").textContent = meta.urlIcon;
+				document.getElementById("proto-url-text").textContent = meta.displayUrl;
+				document.getElementById("proto-modal-ext").href = links.prototypeUrl;
+				document.getElementById("proto-modal-ext-text").textContent = meta.extText;
+				document.getElementById("proto-ext-link").href = links.prototypeUrl;
+
+				var tabDefs = [
+					{ id: "prototype", label: "Prototype", icon: "web", url: links.prototypeUrl },
+					{ id: "feedback", label: "Feedback", icon: "rate_review", url: links.feedbackUrl },
+					{ id: "video", label: "Video", icon: "play_circle", url: links.videoUrl }
+				].filter(function(td) { return !!td.url; });
+
+				var tabUrl = tab === "feedback" ? links.feedbackUrl : tab === "video" ? links.videoUrl : links.prototypeUrl;
+				if (!tabUrl) tab = "prototype";
+
+				var tabsEl = document.getElementById("proto-tabs");
+				tabsEl.innerHTML = tabDefs.map(function(td) {
+					var active = td.id === tab;
+					return '<button data-tab="' + td.id + '" data-url="' + td.url + '" class="proto-tab flex items-center gap-1 px-3 sm:px-4 py-2 text-[10px] font-black uppercase tracking-widest border-r border-stone-700 shrink-0 transition-colors ' + (active ? 'text-white bg-stone-800' : 'text-stone-500 hover:text-stone-300') + '"><span class="material-symbols-outlined text-sm hidden sm:inline">' + td.icon + '</span> ' + td.label + '</button>';
+				}).join("");
+
+				tabsEl.querySelectorAll(".proto-tab").forEach(function(btn) {
+					btn.addEventListener("click", function() {
+						tabsEl.querySelectorAll(".proto-tab").forEach(function(b) {
+							b.classList.remove("bg-stone-800", "text-white");
+							b.classList.add("text-stone-500");
+						});
+						btn.classList.add("bg-stone-800", "text-white");
+						btn.classList.remove("text-stone-500");
+						var src = meta.toPreview(btn.dataset.url);
+						document.getElementById("proto-frame").src = src;
+						document.getElementById("proto-ext-link").href = btn.dataset.url;
+					});
+				});
+
+				var initUrl = tab === "prototype" ? links.prototypeUrl : tab === "feedback" ? links.feedbackUrl : links.videoUrl;
+				document.getElementById("proto-frame").src = meta.toPreview(initUrl || links.prototypeUrl);
+
+				document.getElementById("proto-modal").classList.remove("hidden");
+				document.body.style.overflow = "hidden";
+			}
+
+			function closeProtoModal() {
+				document.getElementById("proto-modal").classList.add("hidden");
+				document.getElementById("proto-frame").src = "about:blank";
+				document.body.style.overflow = "";
+			}
+
+			document.addEventListener("keydown", function(e) {
+				if (e.key === "Escape") closeProtoModal();
+			});
 		</script>
 	</body>
 </html>
