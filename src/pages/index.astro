@@ -380,39 +380,28 @@ try {
 		<!-- Prototype Modal -->
 		<div id="proto-modal" class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center hidden">
 			<div onclick="closeProtoModal()" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-			<div class="relative bg-background-light dark:bg-stone-900 w-full sm:max-w-5xl max-h-[95vh] flex flex-col brutalist-border sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-				<div class="flex items-center justify-between px-4 py-3 border-b-4 border-black shrink-0">
-					<div class="flex items-center gap-3 min-w-0">
-						<h2 id="proto-modal-name" class="text-xl font-[900] uppercase tracking-tighter truncate"></h2>
-						<span id="proto-modal-badge" class="px-2 py-0.5 text-[10px] font-black border uppercase shrink-0"></span>
-					</div>
-					<div class="flex items-center gap-2 shrink-0 ml-3">
-						<a id="proto-modal-ext" href="#" target="_blank" rel="noopener noreferrer"
-							class="hidden sm:inline-flex items-center gap-1 bg-primary text-white text-[10px] font-black px-3 py-1.5 brutalist-border uppercase tracking-tighter no-underline hover:opacity-90 transition-opacity">
-							<span class="material-symbols-outlined text-sm">open_in_new</span>
-							<span id="proto-modal-ext-text">Open Full Site</span>
-						</a>
-						<button onclick="closeProtoModal()" class="brutalist-border p-1 hover:bg-black hover:text-white transition-colors">
-							<span class="material-symbols-outlined">close</span>
-						</button>
-					</div>
-				</div>
+			<div class="relative w-full sm:max-w-5xl max-h-[95vh] flex flex-col brutalist-border sm:shadow-[8px_8px_0px_0px_rgba(67,97,238,1)]">
 				<div class="bg-black flex flex-col flex-1 min-h-0 overflow-hidden">
 					<div class="bg-stone-900 border-b-2 border-black px-3 py-2 flex items-center justify-between shrink-0">
-						<div class="flex items-center gap-2">
-							<div class="flex items-center gap-1.5">
+						<div class="flex items-center gap-2 min-w-0">
+							<div class="flex items-center gap-1.5 shrink-0">
 								<div class="size-3 rounded-full bg-red-500 border border-red-700"></div>
 								<div class="size-3 rounded-full bg-yellow-500 border border-yellow-700"></div>
 								<div class="size-3 rounded-full bg-green-500 border border-green-700"></div>
 							</div>
-							<div class="hidden sm:flex items-center gap-2 bg-stone-800 brutalist-border px-3 py-1 ml-1">
-								<span id="proto-url-icon" class="material-symbols-outlined text-stone-500 text-sm">lock</span>
-								<span id="proto-url-text" class="text-[11px] font-mono text-stone-400 truncate max-w-[220px]"></span>
+							<div class="flex items-center gap-2 bg-stone-800 brutalist-border px-3 py-1 ml-1 min-w-0">
+								<span id="proto-url-icon" class="material-symbols-outlined text-stone-500 text-sm shrink-0">lock</span>
+								<span id="proto-url-text" class="text-[11px] font-mono text-stone-400 truncate max-w-[160px] sm:max-w-[260px]"></span>
 							</div>
 						</div>
-						<a id="proto-ext-link" href="#" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition-colors no-underline">
-							<span class="material-symbols-outlined text-lg">open_in_new</span>
-						</a>
+						<div class="flex items-center gap-1 shrink-0 ml-2">
+							<a id="proto-ext-link" href="#" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition-colors no-underline" title="Open full site">
+								<span class="material-symbols-outlined text-lg">open_in_new</span>
+							</a>
+							<button onclick="window.closeProtoModal()" class="text-stone-500 hover:text-white transition-colors" title="Close">
+								<span class="material-symbols-outlined text-lg">close</span>
+							</button>
+						</div>
 					</div>
 					<div id="proto-tabs" class="flex bg-stone-950 border-b-2 border-black overflow-x-auto shrink-0"></div>
 					<iframe id="proto-frame" src="about:blank" width="100%"
@@ -452,15 +441,9 @@ try {
 				var meta = PROTO_META[key];
 				if (!links || !meta) return;
 
-				document.getElementById("proto-modal-name").textContent = meta.title;
-				var badge = document.getElementById("proto-modal-badge");
-				badge.textContent = meta.badge;
-				badge.className = "px-2 py-0.5 text-[10px] font-black border uppercase " + meta.badgeClass;
-				document.getElementById("proto-url-icon").textContent = meta.urlIcon;
+								document.getElementById("proto-url-icon").textContent = meta.urlIcon;
 				document.getElementById("proto-url-text").textContent = meta.displayUrl;
-				document.getElementById("proto-modal-ext").href = links.prototypeUrl;
-				document.getElementById("proto-modal-ext-text").textContent = meta.extText;
-				document.getElementById("proto-ext-link").href = links.prototypeUrl;
+						document.getElementById("proto-ext-link").href = links.prototypeUrl;
 
 				var tabDefs = [
 					{ id: "prototype", label: "Prototype", icon: "web", url: links.prototypeUrl },
