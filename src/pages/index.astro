@@ -421,8 +421,9 @@ try {
 			</div>
 		</div>
 
+		<script type="application/json" id="proto-data" set:text={JSON.stringify(prototypes)}></script>
 		<script is:inline>
-			var protoData = {JSON.stringify(prototypes)};
+			var protoData = JSON.parse(document.getElementById("proto-data").textContent);
 			var PROTO_META = {
 				"ism-primer": {
 					title: "ISM Primer", badge: "Document",
