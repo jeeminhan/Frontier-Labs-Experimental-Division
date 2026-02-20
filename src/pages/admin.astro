@@ -4,12 +4,20 @@ import '../styles/global.css'
 import defaultData from '../data/prototypes.json'
 import { list } from '@vercel/blob'
 
-let prototypes = defaultData as Record<string, any>;
+let prototypes = structuredClone(defaultData) as Record<string, any>;
 try {
   const { blobs } = await list({ prefix: 'prototypes.json' });
   if (blobs.length > 0) {
     const res = await fetch(blobs[0].url, { cache: 'no-store' });
-    prototypes = await res.json();
+    const blob = await res.json();
+    for (const key of Object.keys(prototypes)) {
+      if (blob[key]) {
+        prototypes[key].prototypeUrl = blob[key].prototypeUrl ?? prototypes[key].prototypeUrl;
+        prototypes[key].feedbackUrl = blob[key].feedbackUrl ?? prototypes[key].feedbackUrl;
+        prototypes[key].slidesUrl = blob[key].slidesUrl ?? prototypes[key].slidesUrl;
+        prototypes[key].videoUrl = blob[key].videoUrl ?? prototypes[key].videoUrl;
+      }
+    }
   }
 } catch {
   // Blob store not available (local dev) — use default JSON
