@@ -21,8 +21,8 @@
     "videoUrl": ""
   },
   "trust-engine": {
-    "name": "Trust_Engine",
-    "prototypeUrl": "https://mujin20.vercel.app/trust-engine",
+    "name": "Mujin",
+    "prototypeUrl": "https://mujin20.vercel.app/",
     "feedbackUrl": "",
     "slidesUrl": "",
     "videoUrl": ""

@@ -180,7 +180,7 @@ try {
 								</button>
 								<div>
 									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
-										<button onclick="openProtoModal('trust-engine')" class="text-xl font-[900] uppercase tracking-tighter hover:text-primary transition-colors text-left">Trust_Engine</button>
+										<button onclick="openProtoModal('trust-engine')" class="text-xl font-[900] uppercase tracking-tighter hover:text-primary transition-colors text-left">Mujin</button>
 									</div>
 									<p class="text-sm font-medium text-stone-500">Relational trust-building framework for cross-cultural discipleship.</p>
 								</div>
@@ -405,9 +405,9 @@ try {
 		</script>
 
 		<!-- Prototype Modal -->
-		<div id="proto-modal" class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center hidden">
+		<div id="proto-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 hidden">
 			<div onclick="closeProtoModal()" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-			<div class="relative w-full sm:max-w-5xl max-h-[95vh] flex flex-col brutalist-border sm:shadow-[8px_8px_0px_0px_rgba(67,97,238,1)]">
+			<div class="relative w-full max-w-5xl max-h-[92vh] flex flex-col brutalist-border shadow-[4px_4px_0px_0px_rgba(67,97,238,1)] sm:shadow-[8px_8px_0px_0px_rgba(67,97,238,1)]">
 				<div class="bg-black flex flex-col flex-1 min-h-0 overflow-hidden">
 					<div class="bg-stone-900 border-b-2 border-black px-3 py-2 flex items-center justify-between shrink-0">
 						<div class="flex items-center gap-2 min-w-0">
@@ -432,7 +432,7 @@ try {
 					</div>
 					<div id="proto-tabs" class="flex bg-stone-950 border-b-2 border-black overflow-x-auto shrink-0"></div>
 					<iframe id="proto-frame" src="about:blank" width="100%"
-						class="border-0 block bg-white" style="height: 70vh; min-height: 400px;"></iframe>
+						class="border-0 block bg-white flex-1" style="min-height: 0;"></iframe>
 				</div>
 			</div>
 		</div>
@@ -461,9 +461,9 @@ try {
 					toPreview: function(url) { return url; }
 				},
 				"trust-engine": {
-					title: "Trust Engine", badge: "In-Dev",
+					title: "Mujin", badge: "In-Dev",
 					badgeClass: "bg-orange-100 text-orange-700 border-orange-700",
-					displayUrl: "mujin20.vercel.app/trust-engine", urlIcon: "lock",
+					displayUrl: "mujin20.vercel.app", urlIcon: "lock",
 					extText: "Open Full Site",
 					toPreview: function(url) { return url; }
 				}
