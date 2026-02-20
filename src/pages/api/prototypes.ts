@@ -8,16 +8,26 @@ const BLOB_NAME = 'prototypes.json';
 import defaultData from '../../data/prototypes.json';
 
 async function readData() {
+  const base = structuredClone(defaultData) as Record<string, any>;
   try {
     const { blobs } = await list({ prefix: BLOB_NAME });
     if (blobs.length > 0) {
       const res = await fetch(blobs[0].url, { cache: 'no-store' });
-      return await res.json();
+      const blob = await res.json();
+      // Merge blob URLs into base, but always use base for `name`
+      for (const key of Object.keys(base)) {
+        if (blob[key]) {
+          base[key].prototypeUrl = blob[key].prototypeUrl ?? base[key].prototypeUrl;
+          base[key].feedbackUrl = blob[key].feedbackUrl ?? base[key].feedbackUrl;
+          base[key].slidesUrl = blob[key].slidesUrl ?? base[key].slidesUrl;
+          base[key].videoUrl = blob[key].videoUrl ?? base[key].videoUrl;
+        }
+      }
     }
   } catch {
-    // Blob store not available (local dev) — fall through to default
+    // Blob store not available (local dev) — use default JSON
   }
-  return structuredClone(defaultData);
+  return base;
 }
 
 async function writeData(data: Record<string, unknown>) {
