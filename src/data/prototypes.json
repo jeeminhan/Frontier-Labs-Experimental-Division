@@ -20,6 +20,13 @@
     "slidesUrl": "",
     "videoUrl": ""
   },
+  "trust-engine": {
+    "name": "Trust_Engine",
+    "prototypeUrl": "https://mujin20.vercel.app/trust-engine",
+    "feedbackUrl": "",
+    "slidesUrl": "",
+    "videoUrl": ""
+  },
   "shock-o-poly": {
     "name": "Shock-o-poly",
     "prototypeUrl": "",

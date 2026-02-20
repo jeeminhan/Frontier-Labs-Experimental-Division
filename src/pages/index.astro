@@ -172,6 +172,33 @@ try {
 							</div>
 						</div>
 
+						<!-- Item 4: Trust Engine -->
+						<div class="group bg-white dark:bg-stone-800 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 hover:shadow-[8px_8px_0px_0px_#4361ee] transition-all">
+							<div class="flex gap-6 items-center">
+								<button onclick="openProtoModal('trust-engine')" class="size-16 brutalist-border overflow-hidden shrink-0 cursor-pointer bg-black flex items-center justify-center">
+									<span class="material-symbols-outlined text-white text-3xl">security</span>
+								</button>
+								<div>
+									<div class="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1">
+										<button onclick="openProtoModal('trust-engine')" class="text-xl font-[900] uppercase tracking-tighter hover:text-primary transition-colors text-left">Trust_Engine</button>
+									</div>
+									<p class="text-sm font-medium text-stone-500">Relational trust-building framework for cross-cultural discipleship.</p>
+								</div>
+							</div>
+							<div class="flex items-center gap-4">
+								<div class="flex flex-wrap gap-2">
+									<button onclick="openProtoModal('trust-engine','video')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-blue text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+										<span class="material-symbols-outlined text-sm">play_circle</span>
+										Video Overview
+									</button>
+									<button onclick="openProtoModal('trust-engine','feedback')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest brutalist-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+										<span class="material-symbols-outlined text-sm">rate_review</span>
+										Feedback Form
+									</button>
+								</div>
+							</div>
+						</div>
+
 						<!-- Item 4: Shock-o-poly -->
 						<div class="group bg-stone-100 dark:bg-stone-900 brutalist-border p-4 md:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 opacity-60 grayscale cursor-not-allowed">
 							<div class="flex gap-6 items-center">
@@ -430,6 +457,13 @@ try {
 					title: "Global Atlas", badge: "In-Dev",
 					badgeClass: "bg-orange-100 text-orange-700 border-orange-700",
 					displayUrl: "global-atlas-plum.vercel.app", urlIcon: "lock",
+					extText: "Open Full Site",
+					toPreview: function(url) { return url; }
+				},
+				"trust-engine": {
+					title: "Trust Engine", badge: "In-Dev",
+					badgeClass: "bg-orange-100 text-orange-700 border-orange-700",
+					displayUrl: "mujin20.vercel.app/trust-engine", urlIcon: "lock",
 					extText: "Open Full Site",
 					toPreview: function(url) { return url; }
 				}
