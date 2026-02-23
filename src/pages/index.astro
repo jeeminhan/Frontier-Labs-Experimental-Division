@@ -469,7 +469,15 @@ try {
 					badgeClass: "bg-orange-100 text-orange-700 border-orange-700",
 					displayUrl: "mujin20.vercel.app", urlIcon: "lock",
 					extText: "Open Full Site",
-					toPreview: function(url) { return url; }
+					toPreview: function(url) {
+						if (!url) return url;
+						var ytWatch = url.match(/youtube\.com\/watch\?v=([^&]+)/);
+						if (ytWatch) return 'https://www.youtube.com/embed/' + ytWatch[1];
+						var ytShort = url.match(/youtu\.be\/([^?]+)/);
+						if (ytShort) return 'https://www.youtube.com/embed/' + ytShort[1];
+						if (url.includes('docs.google.com/forms') && url.endsWith('/edit')) return url.replace('/edit', '/viewform');
+						return url;
+					}
 				}
 			};
 
